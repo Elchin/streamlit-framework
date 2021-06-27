@@ -11,14 +11,14 @@ from pandas_datareader import data as wb
 from PIL import Image 
 
 st.write("""
-#Stock Market/Crypto dashboard application
+#Stock Market/Crypto Dashboard Application
 """)
 
 st.sidebar.header("User Input")
 
 def get_input():
     start_date=st.sidebar.text_input("Start-date","2020-01-01")
-    end_date=st.sidebar.text_input("End-date","2020-06-01")
+    end_date=st.sidebar.text_input("End-date","2021-06-26")
     crypto_symbol=st.sidebar.text_input("Stock Symbol","BTC-USD")
     return start_date, end_date, crypto_symbol
 
@@ -54,15 +54,15 @@ fig = go.Figure(
     ]
 )
 
-st.header(crypto_name+"Data")
+st.header(crypto_name+" Data")
 st.write(stock)
 
-st.header(crypto_name+"Close Price")
+st.header(crypto_name+" Close Price")
 st.line_chart(stock['Close'])
 
-st.header(crypto_name+"Volume")
+st.header(crypto_name+" Volume")
 st.bar_chart(stock['Volume'])
 
-st.header(crypto_name+"Candle Stick")
+st.header(crypto_name+" Candle Stick")
 st.plotly_chart(fig)
 
